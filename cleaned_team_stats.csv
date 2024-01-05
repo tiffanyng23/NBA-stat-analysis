@@ -1,0 +1,31 @@
+,TEAM,CONF,DIVISION,GP,PPG,PACE,SOS,CONS,A4F,W,L,WIN%,TOP10
+0,Milwaukee,East,Central,82,116.9,100.5,-0.44,15.0,0.086,58,24,0.707,Y
+1,Boston,East,Atlantic,82,117.9,98.4,-0.84,14.3,0.063,57,25,0.695,Y
+2,Philadelphia,East,Atlantic,82,115.2,96.8,0.11,13.3,0.021,54,28,0.659,Y
+3,Denver,West,Northwest,82,115.8,98.1,-0.56,14.3,0.058,53,29,0.646,Y
+4,Cleveland,East,Central,82,112.3,95.6,-1.03,12.9,0.004,51,31,0.622,Y
+5,Memphis,West,Southwest,82,116.9,101.0,-0.49,14.7,0.007,51,31,0.622,Y
+6,Sacramento,West,Pacific,82,120.8,100.3,-0.49,13.5,0.006,48,34,0.585,Y
+7,New York,East,Atlantic,82,116.0,97.1,-0.02,13.0,0.021,47,35,0.573,Y
+8,Phoenix,West,Pacific,82,113.6,98.2,0.34,15.2,-0.001,45,37,0.549,Y
+9,Brooklyn,East,Atlantic,82,113.4,98.3,-0.05,15.6,0.036,45,37,0.549,Y
+10,Golden State,West,Pacific,82,118.9,101.7,0.37,15.4,0.067,44,38,0.537,N
+11,Miami,East,Southeast,82,109.5,96.1,-0.07,11.8,-0.07,44,38,0.537,N
+12,LA Clippers,West,Pacific,82,113.6,97.9,0.11,13.5,0.028,44,38,0.537,N
+13,LA Lakers,West,Pacific,82,117.2,101.3,0.33,11.3,0.024,43,39,0.524,N
+14,New Orleans,West,Southwest,82,114.4,99.0,-0.13,14.7,0.001,42,40,0.512,N
+15,Minnesota,West,Northwest,82,115.8,101.0,0.32,11.6,0.02,42,40,0.512,N
+16,Toronto,East,Atlantic,82,112.9,97.1,-0.32,12.5,-0.119,41,41,0.5,N
+17,Atlanta,East,Southeast,82,118.4,100.7,0.62,12.9,-0.026,41,41,0.5,N
+18,Chicago,East,Central,82,113.1,98.5,0.11,15.0,-0.013,40,42,0.488,N
+19,Oklahoma City,West,Northwest,82,117.5,101.1,-0.2,12.7,-0.068,40,42,0.488,N
+20,Dallas,West,Southwest,82,114.2,96.5,-0.35,12.3,-0.002,38,44,0.463,N
+21,Utah,West,Northwest,82,117.1,100.4,-0.16,11.4,0.043,37,45,0.451,N
+22,Washington,East,Southeast,82,113.2,98.5,0.2,13.2,0.032,35,47,0.427,N
+23,Indiana,East,Central,82,116.3,100.9,0.11,10.8,-0.027,35,47,0.427,N
+24,Orlando,East,Southeast,82,111.4,99.2,1.01,12.1,-0.015,34,48,0.415,N
+25,Portland,West,Northwest,82,113.4,98.5,0.09,15.0,-0.015,33,49,0.402,N
+26,Charlotte,East,Southeast,82,111.0,100.8,1.11,13.0,-0.044,27,55,0.329,N
+27,Houston,West,Southwest,82,110.7,99.0,0.66,12.6,-0.026,22,60,0.268,N
+28,San Antonio,West,Southwest,82,113.0,101.6,0.53,14.9,-0.059,22,60,0.268,N
+29,Detroit,East,Central,82,110.3,99.0,0.92,12.3,-0.04,17,65,0.207,N
