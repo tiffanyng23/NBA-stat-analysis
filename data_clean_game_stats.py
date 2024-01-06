@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import seaborn as sns
 from scipy.stats import norm
 
 #DATASET: Average season statistics for each team from 2018-2023. 
@@ -110,19 +111,31 @@ matrix_data = team_data_copy[bp_variables]
 matrix = matrix_data.corr().abs()
 print(matrix)
 
+#correlation heatmap
+plt.figure(figsize=(8,6))
+a = sns.heatmap(data=matrix, cmap=sns.cubehelix_palette(as_cmap=True))
+a.set_title("Correlation Heatmap", fontsize = 12)
+
+plt.tight_layout()
+plt.show()
+#Visualization of correlation between variables - there are so many variables.
+#So I will need to filter for variables with high correlations and look closely at those!
+
+
 
 #stack matrix values + sort by descending order
 matrix_2 = matrix.stack()
 filter_matrix = matrix_2.where(matrix_2 != 1).sort_values(ascending = False)
 len(filter_matrix)
 #441 rows - this is too long! Filter for those with a correlation of over 0.8
-filter_matrix.head(25)
+filter_matrix.head(40)
 #remove 3PA - 3 correlations over 0.8, 2PA - 2 correlations over 0.8, remove FG - 2 correlations over 0.8
 #FTA, DRB will also be removed since each of them also had 1 correlation over 0.8
 
 #Dropping variables with a high correlation coefficient
 team_data_copy = team_data_copy.drop(["3PA", "2PA", "FG", "FTA", "DRB"], axis = 1)
 cleaned_data = team_data_copy
+
 
 #CREATE A TOP 10 RANKING CATEGORY:
 #Add a Top10 column to identify which team finished with a top 10 record league-wide in each season

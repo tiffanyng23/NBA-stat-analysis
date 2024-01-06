@@ -41,6 +41,8 @@ for var in var_to_scale:
     #apply scale_data function
     to_scale_data[var] = scale_data(to_scale_data, var)
 
+
+
 #CREATING DUMMY VARIABLES
 #Convert Top10 variable to a dummy variable so it can be used in prediction models
 to_scale_data.dtypes
@@ -91,7 +93,7 @@ specificity = TN/(TN + FP)
 
 
 #Cross Validation
-#I will create more models using cross validation to partition the data.
+#I will create another logistic regression model this time using cross validation to partition the data.
 #I will put 7 folds, so the data will be divided into 7 subsets/folds.
 #Training set will be 6 fold, testing will be 1 fold.
 
@@ -121,6 +123,8 @@ sensitivity_cv = TP_2/(TP_2+FN_2)
 
 #specificity (True negative -teams that did not have a top 10 regular season record)
 specificity_cv = TN_2/(TN_2 + FP_2)
+# The specificity was 0.89 (ability to predict teams that did not finish with a top 10 record).
+
 
 #Summary
 #By using logistic regression (both using one training and testing set and with cross validation), a top 10 regular season performance can be predicted.
