@@ -21,6 +21,11 @@ team_data_copy.tail()
 #No missing values shown using isnull method in any column
 team_data_copy.isnull().sum()
 
+#set of all teams
+result = set()
+for x in team_data_copy["Team"]:
+    result.add(x)
+print(result)
 
 #EXPLORTORY DATA ANALYSIS:
 #Summary Statistics

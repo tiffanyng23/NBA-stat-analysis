@@ -17,6 +17,7 @@ for col in data.columns:
 #list of all teams
 teams = set(data["TEAM"])
 
+
 #DATA CLEANING
 data_copy = data
 
