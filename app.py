@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np 
 import plotly.express as px
 import dash_bootstrap_components as dbc
-import dash_html_components as html
 
 #datasets
 #team data
@@ -49,11 +48,11 @@ controls_1 = dbc.Card(
                 dcc.Dropdown(
                     options=["FGA","FG%","3P","3P%","2P","2P%","FT","FT%","ORB","TRB","AST","STL","BLK","TOV","PF","PTS"],
                     value="PTS", id="team-var"
-                    ),
+                    ), 
             ]
-        ),
+        ), 
      ],
-    body=True,
+    body=True, color= "lightgrey", 
 )       
 
 controls_2=dbc.Card([      
@@ -79,9 +78,8 @@ controls_2=dbc.Card([
             ]
         ),
     ],
-    body=True
+    body=True, color= "lightgrey", 
 ) 
-
 
 controls_3=dbc.Card([      
         html.Div(
@@ -107,7 +105,7 @@ controls_3=dbc.Card([
             ]
         ),
     ],
-    body=True
+    body=True, color= "lightgrey", 
 ) 
 
 controls_4=dbc.Card([      
@@ -123,73 +121,85 @@ controls_4=dbc.Card([
             ]
         ),
     ],
-    body=True
+    body=True, color= "lightgrey", 
 ) 
 
+title_card= dbc.Card(
+    dbc.CardBody(
+        [
+        html.H1(children='NBA Team and Player Statistics Comparison'),
+        ], 
+    ),
+)
 
 
 
 #app layout
 app.layout = dbc.Container([
+    dbc.Row([
+        title_card
+    ],className="card-title"
+    ),
     #team stats
-    dbc.Row([
-        html.H1(children='NBA Team and Player Statistics Comparison'),
-            
-    ]),
-    dbc.Row([
-        html.H3(children="Team Comparison"),
-     ]),
-    dbc.Row([
-        html.Div(children= "This barplot allows for direct statistical comparison of two NBA teams."),             
-    ]),
-    dbc.Row([
-        dbc.Col(controls_1, width=3),
-        dbc.Col(dcc.Graph(figure={}, id="bar-graph"), width=9),
-    ],
-    align= "center",
-    ),
-    dbc.Row([
-        html.H3(children="Assess Relationships Between Statistical Categories for Each Team"),
-        
-    ]),
-    dbc.Row([
-        html.Div(children="The scatterplot allows for statistical comparison of all NBA teams by default; and optional customization to compare as many NBA teams as desired. To remove any teams, single-click on the team in the legend. To isolate a specific team, double-click on the team and then single click on additional teams you would like to include. Double-click to reset to default."),
-    ]),
-    dbc.Row([
-        dbc.Col(controls_2, width=3),
-        dbc.Col(dcc.Graph(figure={}, id="scatter-graph"), width=9),
-    ],
-    align="center",
-    ),
+    dcc.Tabs([
+        dcc.Tab(label="Team Statistics", children=[
+            dbc.Row([
+                html.H3(children="Team Comparison"),
+            ]),
+            dbc.Row([
+                html.Div(children= "This barplot allows for direct statistical comparison of two NBA teams."),             
+            ]),
+            dbc.Row([
+                dbc.Col(controls_1, width=3),
+                dbc.Col(dcc.Graph(figure={}, id="bar-graph"), width=9),
+            ],
+            align= "center",
+            ),
+            dbc.Row([
+                html.H3(children="Assess Relationships Between Statistical Categories for Each Team"),
+                
+            ]),
+            dbc.Row([
+                html.Div(children="The scatterplot allows for statistical comparison of all NBA teams by default; and optional customization to compare as many NBA teams as desired. To remove any teams, single-click on the team in the legend. To isolate a specific team, double-click on the team and then single click on additional teams you would like to include. Double-click to reset to default."),
+            ]),
+            dbc.Row([
+                dbc.Col(controls_2, width=3),
+                dbc.Col(dcc.Graph(figure={}, id="scatter-graph"), width=9),
+            ],
+            align="center",
+            ),
+        ]),
 
-    #player stats
-    dbc.Row([
-        html.H3(children="Player Comparison"),
+        #player stats
+        dcc.Tab(label="Player Statistics", children=[
+            dbc.Row([
+                html.H3(children="Player Comparison"),
+            ]),
+            dbc.Row([
+                html.Div(children= "This barplot allows for direct statistical comparison of two NBA players."),             
+            ]),
+            dbc.Row([
+                dbc.Col(controls_3, width=3),
+                dbc.Col(dcc.Graph(figure={}, id="player-bar-graph"),width=9),
+            ],
+            align="center",
+            ),
+            dbc.Row([
+                html.H3(children="Assess Relationships Between Two Statistical Categories Among All Players"),
+                
+            ]),
+            dbc.Row([
+                html.Div(children="The scatterplot allows for statistical comparison of all NBA players by default; and optional customization to compare as many NBA players as desired. To remove any players, single-click on the player in the legend. To isolate a specific player, double-click on the player and then single click on additional players you would like to include. Double-click to reset to default."),
+            ]),
+            dbc.Row([
+                dbc.Col(controls_4, width=3),
+                dbc.Col(dcc.Graph(figure={}, id="player-scatter-graph"), width=9),
+            ],
+            align="center",
+            ),
+        ])
     ]),
-    dbc.Row([
-        html.Div(children= "This barplot allows for direct statistical comparison of two NBA players."),             
-    ]),
-    dbc.Row([
-        dbc.Col(controls_3, width=3),
-        dbc.Col(dcc.Graph(figure={}, id="player-bar-graph"),width=9),
-    ],
-    align="center",
-    ),
-    dbc.Row([
-        html.H3(children="Assess Relationships Between Two Statistical Categories Among All Players"),
-        
-    ]),
-    dbc.Row([
-        html.Div(children="The scatterplot allows for statistical comparison of all NBA players by default; and optional customization to compare as many NBA players as desired. To remove any players, single-click on the player in the legend. To isolate a specific player, double-click on the player and then single click on additional players you would like to include. Double-click to reset to default."),
-    ]),
-    dbc.Row([
-        dbc.Col(controls_4, width=3),
-        dbc.Col(dcc.Graph(figure={}, id="player-scatter-graph"), width=9),
-    ],
-    align="center",
-    ),
-
-], fluid=True)
+],fluid=True)
 
 
 
