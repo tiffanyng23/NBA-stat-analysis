@@ -124,25 +124,19 @@ controls_4=dbc.Card([
     body=True, color= "lightgrey", 
 ) 
 
-title_card= dbc.Card(
-    dbc.CardBody(
-        [
-        html.H1(children='NBA Team and Player Statistics Comparison'),
-        ], 
-    ),
-)
+
 
 
 
 #app layout
 app.layout = dbc.Container([
     dbc.Row([
-        title_card
-    ],className="card-title"
+        html.H1(children='NBA Team and Player Statistics Comparison Tool')
+    ],
     ),
     #team stats
-    dcc.Tabs([
-        dcc.Tab(label="Team Statistics", children=[
+    dbc.Tabs([
+        dbc.Tab(label="Team Statistics", children=[
             dbc.Row([
                 html.H3(children="Team Comparison"),
             ]),
@@ -160,18 +154,18 @@ app.layout = dbc.Container([
                 
             ]),
             dbc.Row([
-                html.Div(children="The scatterplot allows for statistical comparison of all NBA teams by default; and optional customization to compare as many NBA teams as desired. To remove any teams, single-click on the team in the legend. To isolate a specific team, double-click on the team and then single click on additional teams you would like to include. Double-click to reset to default."),
+                html.Div(children="This scatterplot allows for statistical comparison of all NBA teams by default; and optional customization to compare as many NBA teams as desired. To remove any teams, single-click on the team in the legend. To isolate a specific team, double-click on the team and then single click on additional teams you would like to include. Double-click to reset to default."),
             ]),
             dbc.Row([
                 dbc.Col(controls_2, width=3),
                 dbc.Col(dcc.Graph(figure={}, id="scatter-graph"), width=9),
             ],
-            align="center",
+            align="center", 
             ),
         ]),
 
         #player stats
-        dcc.Tab(label="Player Statistics", children=[
+        dbc.Tab(label="Player Statistics", children=[
             dbc.Row([
                 html.H3(children="Player Comparison"),
             ]),
@@ -189,7 +183,7 @@ app.layout = dbc.Container([
                 
             ]),
             dbc.Row([
-                html.Div(children="The scatterplot allows for statistical comparison of all NBA players by default; and optional customization to compare as many NBA players as desired. To remove any players, single-click on the player in the legend. To isolate a specific player, double-click on the player and then single click on additional players you would like to include. Double-click to reset to default."),
+                html.Div(children="This scatterplot allows for statistical comparison of all NBA players by default; and optional customization to compare as many NBA players as desired. To remove any players, single-click on the player in the legend. To isolate a specific player, double-click on the player and then single click on additional players you would like to include. Double-click to reset to default."),
             ]),
             dbc.Row([
                 dbc.Col(controls_4, width=3),
@@ -197,7 +191,7 @@ app.layout = dbc.Container([
             ],
             align="center",
             ),
-        ])
+        ],)
     ]),
 ],fluid=True)
 
