@@ -15,5 +15,6 @@ Additionally, NBA team statistics from the last 5 completed NBA regular seasons 
 
 
 ## Plotly Dash App
-I created an interactive app using Plotly Dash where users can select NBA teams and players to make direct statistical category comparisons through graphical visualizations.
+[NBA Team and Player Comparison Tool](https://nba-comparison-tool-0696e2b86f3d.herokuapp.com/)
 
+I created an interactive app using Plotly Dash where users can select NBA teams and players to make direct statistical category comparisons through graphical visualizations.
