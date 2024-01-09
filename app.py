@@ -15,6 +15,7 @@ player_data = player_data.drop("RANK", axis=1)
 
 #initializing app
 app = Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
+server=app.server
 
 #controls
 controls_1 = dbc.Card(
@@ -295,5 +296,6 @@ def update_scatter(scatter_var_1, scatter_var_2):
 
 #run app
 if __name__ == '__main__':
-    app.run(debug=True, port=8000)
+    app.run_server(debug=True)
+
 
